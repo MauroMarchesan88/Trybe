@@ -75,3 +75,4 @@ O JavaScript te permite dar dinamismos Ã s pÃ¡ginas. Ã‰ ele quem garante q
 #31 O mercado de trabalho é dominado pelo JavaScript.
 
 #32 Muito usada no desenvolvimento de sites.
+Python
