@@ -1,0 +1,77 @@
+5 motivos para vocÃª aprender JavaScript!
+------------------------------------------
+
+O JavaScript Ã© uma linguagem de programaÃ§Ã£o muito poderosa utilizada em todo o mundo!
+
+O uso mais convencional do JavaScript Ã© no contexto do nosso navegador, juntamente com HTML e CSS.
+
+Por que o JavaScript Ã© tÃ£o valorizado?
+----------------------------------------
+
+O JavaScript te permite dar dinamismos Ã s pÃ¡ginas. Ã‰ ele quem garante que sua pÃ¡gina tenha a habilidade de reagir Ã s aÃ§Ãµes das pessoas usuÃ¡rias.
+
+5 motivos para vocÃª aprender JavaScript
+-----------------------------------------
+#1 Utilização Fullstack.
+
+#2 Produtividade otimizada com frameworks e bibliotecas disponiveis.
+
+#3 Popular em trabalhos ao redor do mundo.
+
+#4 Uma comunidade ativa mantem a linguagem em constante evolução.
+
+#5 Uma das sinteaxes mais simples.
+
+#6 Ajuda no desenvolvimento do raciocínio lógico.
+
+#7 Comunidade grande.
+
+#8 Procurada para trabalho.
+
+#9 Linguagem muito usada em desenvolvimento web.
+
+#10 Linguagem muito popular e adotada pelas principais empresas de tecnologia do mundo.
+
+#11 Sintaxe mais simplificada que a maioria das linguagens.
+
+#12 Constante evolução, principalmente por ter uma comunidade engajada.
+
+#13 Utilizado no back-end e no front-end.
+
+#14 Muitas opções de bibliotecas e frameworks que vão maximizar sua produtividade.
+
+#15 Suporte online, comunidades e linguagem com tempo no ambiente.
+
+#16 Linguagem muito popular e adotada pelas principais empresas de tecnologia do mundo.
+
+#17 Sintaxe mais simplificada que a maioria das linguagens.
+
+#18 Constante evoluÃ§Ã£o, principalmente por ter uma comunidade engajada.
+
+#19 Utilizado no back-end e no front-end.
+
+#20 Muitas opÃ§Ãµes de bibliotecas e frameworks que vÃ£o maximizar sua produtividade.
+
+#21 A linguagem Javascript ajuda a desenvolver um melhor o raciocínio lógico do programador
+
+#22 É a linguagem com maior Suporte online, comunidades e linguagem com tempo no ambiente.
+
+#23 Habilidade em javascript é muito procurada pelo recrutadores no mercado de trabalho.
+
+#24 A maioria dos sites são desenvolvidos por javascript .
+
+#25 Sintaxe mais simplificada que a maioria das linguagens.
+
+#26 Constante evoluÃ§Ã£o, principalmente por ter uma comunidade engajada.
+
+#27 Utilizado no back-end e no front-end.
+
+#28 Muitas opÃ§Ãµes de bibliotecas e frameworks que vÃ£o maximizar sua produtividade.
+
+#29 O raciocínio lógico do programador é imensamente melhorado ao usar o JavaScript.
+
+#30 A comunidade online e tempo de uso ajuda na procura de suporte pela internet.
+
+#31 O mercado de trabalho é dominado pelo JavaScript.
+
+#32 Muito usada no desenvolvimento de sites.
