@@ -1,0 +1,19 @@
+Copiar
+body {
+  background-color: blue;
+}
+
+h1 {
+  color: purple;
+  font-size: large;
+}
+
+p {
+  color: green;
+  font-weight: bold;
+}
+
+h2 {
+  color: red;
+  border: 3px solid black;
+}
