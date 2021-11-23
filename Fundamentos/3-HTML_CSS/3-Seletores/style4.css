@@ -1,0 +1,28 @@
+div:hover{
+    border-style: solid;
+}
+div:nth-child(3) {
+    border-color: aqua;
+    background-color: aquamarine;
+}
+div:nth-child(4) {
+    border-color: aqua;
+    background-color: bisque;
+}
+div:nth-child(5) {
+    background-color: rgb(94, 94, 230);
+    font-size: 2em;
+}
+div:nth-child(6) {
+    background-color: blueviolet;
+}
+div:nth-child(7) {
+    background-color: rgb(211, 205, 197);
+    border-color: aquamarine;
+}
+div:nth-child(5) > h3{
+    font-style: italic;
+}
+div:nth-of-type(odd) >h3{
+    font-style: italic;
+}
