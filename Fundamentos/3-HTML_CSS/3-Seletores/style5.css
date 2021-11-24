@@ -1,0 +1,68 @@
+/* 1*/
+    ol li{
+        background-color: yellow;
+    }
+/*1-b-c*/
+    ol li:nth-child(odd) {
+        color: green;
+        text-transform: uppercase;
+    }
+/*2*/
+    h1, h2, h3 {
+        color: red;
+    }
+/*2-b*/
+    h1,h2,h3 em{
+        font-size: 40px;
+        border: 1px solid black;
+    }
+/*3*/
+    li {
+        font-size: 20px;
+    }
+/*3-b*/
+    li em{
+        font-weight: bold;        
+    }
+/*4*/
+    ul:nth-of-type(1) li:nth-child(-n+3){
+        color: blue;
+    }
+/*4-b*/
+    ul:nth-of-type(1) li:nth-child(2){
+        background-color: pink;
+}    
+/*5*/
+    ul:nth-of-type(2) li:nth-child(1):hover :link{
+        color: orange;
+
+    }
+    ul:nth-of-type(2) li:nth-child(2):hover :link{
+        color: green;
+    }
+    ul:nth-of-type(2) li:nth-child(3):hover :link{
+        color: black;
+    }
+    ul:nth-of-type(2) li:nth-child(4):hover :link{
+        color: yellow;
+    }
+    ul:nth-of-type(2) li:nth-child(5) :hover :link{
+        color: greenyellow;
+    }
+
+/*5-visited*/
+    ul:nth-of-type(2) li:nth-child(1) a:visited {
+        color: orange;
+    }
+    ul:nth-of-type(2) li:nth-child(2) a:visited {
+        color: green;
+    }
+    ul:nth-of-type(2) li:nth-child(3) a:visited {
+        color: black;
+    }
+    ul:nth-of-type(2) li:nth-child(4) a:visited {
+        color: yellow;
+    }
+    ul:nth-of-type(2) li:nth-child(5) a:visited {
+        color: yellowgreen;
+    }
