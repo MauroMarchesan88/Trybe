@@ -1,15 +1,16 @@
-let currentHour = 14;
-var message = "";
+let nota ="aprovada";
 
-if(currentHour>= 22) {
-    message = "Nao deveriamos comer nada, e hora de dormir";
-} else if(currentHour>=18 && currentHour< 22){
-    message = "Rango da noite, vamos jantar :D";
-} else if(currentHour>=14 && currentHour<18) {
-    message = "Vamos fazer um bolo pro cafe da tarde?";
-} else if(currentHour>=11 && currentHour< 14) {
-    message = "Hora do almoco!!!";
-}else{
-    message = "Hmmm, cheiro de cafe recem passado";
+switch (nota) {
+    case "aprovada":
+        console.log("Parabéns, você foi aprovada(o)!");
+        break;
+    case "lista":
+        console.log("Você está na nossa lista de espera");
+        break;
+    case "reprovada":
+        console.log("Você foi reprovada(o)");
+        break;
+    default:
+        console.log("não se aplica")
+        break;
 }
-console.log(message)
