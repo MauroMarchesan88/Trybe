@@ -1,6 +1,8 @@
 let resultado = 0;
 
-
+let num = 0;
+let a = 0;
+let b = 0;
 
 //1-a
 function adicao(a,b) {
@@ -8,50 +10,50 @@ function adicao(a,b) {
     return resultado
 }
 //1-b
-function subtracao(a,b) {
-    resultado = a-b
+function subtracao(num,num2) {
+    resultado = num-num2
     return resultado
 }
 //1-c
-function multiplicacao(a,b) {
-    resultado = a*b
+function multiplicacao(num,num2) {
+    resultado = num*num2
     return resultado
 }
 //1-d
-function divisao(a,b) {
-    resultado = a/b
+function divisao(num,num2) {
+    resultado = num/num2
     return resultado
 }
 //1-d
-function modulo(a,b) {
-    resultado = a%b
+function modulo(num,num2) {
+    resultado = num%num2
     return resultado
 }
 //2
-function maior(c,d) {
-    if (c>d) {
-        resultado = c
+function maior(num,num2) {
+    if (num>num2) {
+        resultado = num
     }else {
-        resultado = d
+        resultado = num2
     }
     return resultado
 }
 //3
-function maiorTres(c,d,e) {
-    if (c>d && c>e) {
-        resultado = c
-    }else if(d>c && d>e){
-        resultado = d
+function maiorTres(num,num2,num3) {
+    if (num>num2 && num>num3) {
+        resultado = num
+    }else if(num2>num && num2>num3){
+        resultado = num2
     }else {
-        resultado = e
+        resultado = num3
     }
     return resultado
 }
 //4
-function posNeg(a) {
-    if (a>0) {
+function posNeg(num) {
+    if (num>0) {
         resultado = "positive"
-    } else if (a<0){
+    } else if (num<0){
         resultado = "negative"
     } else {
         resultado = "zero"
@@ -59,10 +61,10 @@ function posNeg(a) {
     return resultado
 }
 //5
-function booleanFun(c,d,e) {
-    if (c+d+e == 180) {
+function booleanFun(num,num2,num3) {
+    if (num+num2+num3 == 180) {
         resultado = true
-    } else if (c+d+e < 0){
+    } else if (num+num2+num3 < 0){
         resultado = "valor negativo"
     } else {
         resultado = false
@@ -97,4 +99,27 @@ function xadrez(peca) {
     }
     return resultado
 }
+//7
+function nota(num) {
+    if (num >= 90) {
+        resultado = "A"
+    } else if(num >= 80 && num < 90) {
+        resultado = "B"
+    } else if(num >= 70 && num < 80) {
+        resultado = "C"
+    } else if(num >= 60 && num < 70) {
+        resultado = "D"
+    } else if(num >= 50 && num < 60) {
+        resultado = "E"
+    } else {
+        resultado = "F"
+    }
 
+    return resultado
+}
+//8
+function peloMenosUmPar(num,num2,num3) {
+    if(num%2;=0){
+
+    }  
+}
