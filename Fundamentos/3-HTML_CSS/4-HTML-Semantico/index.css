@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+}
+article ul {
+    display: inline;
+}
+.first {
+    background-color: rgb(235, 200, 84);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    margin-left: 45%;
+    display: block;
+}
+
+.second {
+    background-color: rgb(219, 219, 219);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    margin-left: 35%;
+    position:absolute;
+    display: block;
+}   
+
+.third {
+    background-color: rgb(170, 142, 106);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    margin-left: 51%;
+    display: block
+}
+section{
+    text-align: center;
+}
+section ul li{
+    display: inline; 
+}
