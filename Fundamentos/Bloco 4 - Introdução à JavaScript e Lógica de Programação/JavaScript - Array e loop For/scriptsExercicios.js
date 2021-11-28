@@ -119,7 +119,34 @@ function nota(num) {
 }
 //8
 function peloMenosUmPar(num,num2,num3) {
-    if(num%2;=0){
-
-    }  
+    if(num%2 ==0 || num2%2 ==0 || num3%2 == 0){
+        return true
+    } else {
+        return false
+    }
 }
+//9
+function peloMenosUmImpar(num,num2,num3) {
+    if(num%2 ==1 || num2%2 ==1 || num3%2 ==1){
+        return true
+    } else {
+        return false
+    }
+}
+//10
+function lucroMil(valorCusto, valorVenda) {
+    if (valorCusto == 0 || valorVenda == 0) {
+        resultado = "Valores nao podem ser Zero";
+        return resultado
+    }
+    const impostoSobreOCusto = valorVenda * 0.2;
+
+    let valorCustoTotal = valorCusto + impostoSobreOCusto;
+    let lucro = valorVenda - valorCustoTotal;
+    
+    resultado = lucro *1000;
+    console.log(lucro);
+    return resultado
+}
+//11
+
