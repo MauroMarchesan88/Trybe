@@ -52,15 +52,15 @@ for (let index = 0; index < numbers.length; index+=1) {
 // console.log(numMenor)
 
 //8
-let array =[]
+let numbers =[]
 for (let index = 1; index <= 25; index+=1) {
-    array.push(index);
+    numbers.push(index);
 }
 // console.log(array)
 
 //9
 let dividido = 0;
-for (let index = 0; index < array.length; index+=1) {
-    dividido = array[index] /2;
+for (let index = 0; index < numbers.length; index+=1) {
+    dividido = numbers[index] /2;
     console.log(dividido);    
 }
