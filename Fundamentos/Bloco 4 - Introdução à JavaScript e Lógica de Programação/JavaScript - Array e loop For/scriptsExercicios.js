@@ -149,4 +149,42 @@ function lucroMil(valorCusto, valorVenda) {
     return resultado
 }
 //11
+var inss = 0;
+var impostoDeRenda = 0;
 
+function calculoInss(salarioBruto) {
+    if (salarioBruto <= 1556.94 ) {
+        inss = salarioBruto*0.08;
+    } else if (salarioBruto <= 2594.92 && salarioBruto > 1556.94){
+        inss = salarioBruto*0.09;
+    } else if (salarioBruto <= 5189.82 && salarioBruto > 2594.92){
+        inss = salarioBruto*0.11;
+    } else {
+        inss = 570.88;
+    }
+    return inss
+} 
+
+function calculoIR(salarioBruto) {
+    if (salarioBruto <= 1903.98 ) {
+        impostoDeRenda = 0;
+    } else if (salarioBruto <= 2826.65 && salarioBruto > 1903.98){
+        impostoDeRenda = salarioBruto*0.075;
+    } else if (salarioBruto <= 3751.05 && salarioBruto > 2826.66){
+        impostoDeRenda = salarioBruto*0.15;
+    } else if (salarioBruto <= 4664.68 && salarioBruto > 3751.05){
+        impostoDeRenda = salarioBruto*0.225; 
+    } else {
+        impostoDeRenda = (salarioBruto*0.275)+ 869.36;
+    }
+    return impostoDeRenda
+}
+
+function salario(salarioBruto) {
+    calculoIR(salarioBruto);
+    calculoInss(salarioBruto);
+    resultado = salarioBruto - inss - impostoDeRenda;
+    console.log("IR = " + impostoDeRenda);
+    console.log("INSS = " + inss);
+    return resultado;
+}
