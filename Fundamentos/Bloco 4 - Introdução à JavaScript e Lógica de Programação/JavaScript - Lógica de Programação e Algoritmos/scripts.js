@@ -21,16 +21,34 @@ const n = 5;
 //3
 let resultado = "     ";
 let espacio = " ";
-let resultadoFinal = "";
+let resultadoFinal;
 let asterisco = "*";
 
-for (let index = 0; index < n; index+=1) {
-    resultadoFinal = resultado.slice(0, ((n-1)-index));
-    for(let k = 0; k<= index; k+=1){
-        resultadoFinal += asterisco;
-    }
+// for (let index = 0; index < n; index+=1) {
+//     resultadoFinal = resultado.slice(0, ((n-1)-index));
+//     for(let k = 0; k<= index; k+=1){
+//         resultadoFinal += asterisco;
+//     }
 
-    console.log(resultadoFinal);
+//     console.log(resultadoFinal);
+// }
+
+//4
+resultadoFinal = []
+resultadoFinal = resultado.split("")
+
+console.log(resultadoFinal);
+
+for (let linha = 0; linha < 3; linha+=1) {
+    
+    for (let colunaDireita = 0; colunaDireita < linha; colunaDireita++) {
+        resultadoFinal.splice(resultadoFinal.length)
+        
+    }
+    for (let colunaEsquerda = 0; colunaEsquerda < linha; colunaEsquerda++) {
+        
+        
+    }
 }
-0+4
-0+5
+console.log(resultadoFinal);
+
