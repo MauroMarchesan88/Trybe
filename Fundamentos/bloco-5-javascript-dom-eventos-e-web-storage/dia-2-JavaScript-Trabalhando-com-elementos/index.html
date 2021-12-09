@@ -67,8 +67,8 @@
             let descendenteDoPai = paiChildren[k];
             console.log(k)
             if (descendenteDoPai.innerText !== "elementoOndeVoceEsta") {
-                pai.removeChild(descendenteDoPai);
-                console.log(descendenteDoPai)
+                descendenteDoPai.remove()
+                
             } 
         }
 
