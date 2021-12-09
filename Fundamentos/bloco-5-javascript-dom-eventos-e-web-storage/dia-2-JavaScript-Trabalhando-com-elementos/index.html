@@ -1,0 +1,67 @@
+<main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+    <section id='teste'>
+        <p>
+
+        </p>
+    </section>
+    <script>
+        let resposta1 = document.getElementById('elementoOndeVoceEsta');
+    //    console.log(resposta1);
+        let resposta2 = resposta1.parentElement;
+    //    console.log(resposta2);
+        resposta2.style.color = "red";
+        let resposta3 = resposta1.firstElementChild;
+    //    console.log(resposta3);
+        resposta3.innerHTML = "Adicione um texto a ele";
+        let resposta4 = resposta2.firstElementChild;
+    //    console.log(resposta4);
+        let resposta5 = resposta1.parentElement.firstElementChild;
+    //    console.log(resposta5);
+        let resposta6 = resposta1.nextSibling;
+    //    console.log(resposta6);
+        let resposta7 = resposta1.nextElementSibling;
+    //    console.log(resposta7);
+        let resposta8 = resposta2.childNodes[5];
+    //    console.log(resposta8);
+
+        //parte 2
+        let pai = document.querySelector("#pai");
+        let novoIrmao = document.createElement('section', { is: '#novo-irmao'});
+        novoIrmao.innerHTML = "novo irmao";
+        pai.appendChild(novoIrmao);
+        let novoFilho = document.createElement('section');
+        novoFilho.innerHTML = "novo filho";
+        resposta1.appendChild(novoFilho);
+        let filhoDoFilho = document.querySelector('#primeiroFilhoDoFilho');
+        let novoNeto = document.createElement('section');
+        novoNeto.innerHTML = "novo neto";
+        filhoDoFilho.appendChild(novoNeto);
+        console.log(novoNeto.parentNode.parentNode.parentNode.children[2]);
+
+        // parte 3
+        let paiDoPai = document.getElementById('paiDoPai')
+        let paiDoPaiChildren = paiDoPai.children;
+        
+        for (let i = 0; i < paiDoPaiChildren.length; i += 1) {
+            let descendente = paiDoPaiChildren[i];
+            console.log(descendente.innerHTML);
+            
+            if (descendente.innerText.includes !== "pai") {
+                
+                paiDoPai.removeChild(descendente);
+                
+            }
+        }
+        console.log(paiDoPaiChildren);
+    </script>
+  </main>
