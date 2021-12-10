@@ -18,10 +18,21 @@ secondLi.addEventListener('click', click);
 thirdLi.addEventListener('click', click);
 
 
-function click() {
-    //element.classList.add('tech');
-    console.log("click");
+
+function click(eventoDeOrigem) {
+  firstLi.removeAttribute('class');
+  secondLi.removeAttribute('class');
+  thirdLi.removeAttribute('class');
+
+  if(firstLi === eventoDeOrigem.target) {
+    firstLi.classList.add('tech');
+  } else if (secondLi === eventoDeOrigem.target) {
+    secondLi.classList.add('tech');
+  } else if (thirdLi === eventoDeOrigem.target) {
+    thirdLi.classList.add('tech');
+  }
 }
+
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
