@@ -155,7 +155,31 @@ function taskColor(event) {
 
 //bonus
 
+let tasksList = document.getElementsByClassName('task-list');
+
 let textoCompromisso = document.getElementById('task-input');
 let botonCompromisso = document.getElementById('btn-add');
-console.log(textoCompromisso);
-textoCompromisso.addEventListener('k')
+
+textoCompromisso.addEventListener('keydown', mudaTexto);
+botonCompromisso.addEventListener('click', clickBotao);
+
+
+function mudaTexto(event){
+  console.log(event.key);
+  let letra = event.key;
+  if (letra === undefined ){
+    alert('ADICIONAR');
+  } else if (letra == 'Enter'){
+    clickBotao();
+  }
+}
+
+function clickBotao(){
+  let li = document.createElement('li');
+  if(textoCompromisso.value === ''){
+    alert('ADICIONAR');
+  }  li.innerText = textoCompromisso.value;
+
+  tasksList[0].appendChild(li);
+  console.log('saraza');
+}
