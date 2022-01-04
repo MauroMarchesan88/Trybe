@@ -74,5 +74,3 @@ for(let i = 0; i< options.length; i +=1){
 
 let footer = document.getElementById('footer');
 footer.appendChild(optionsList);
-
-
