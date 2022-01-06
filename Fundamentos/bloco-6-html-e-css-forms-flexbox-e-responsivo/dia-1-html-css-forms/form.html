@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulário</h1>
-    <fieldset>
+    <fieldset id="fieldset-1">
         <label for="input-text">
             <input type="text" name="texto" id="input-text" required placeholder="Digite seu nome" maxlength="40">
         </label>
@@ -26,12 +26,24 @@
             <input type="radio" name="tipo" id="input-tipo2" required>Apartamento
         </div>
     </fieldset>
-    <fieldset>
+    <fieldset id="fieldset-2">
         <textarea name="resumo" id="textarea-resumo" cols="30" rows="10" maxlength="1000" required></textarea>
-        <input type="text" name="cargo" id="input-cargo" maxlength="40" required>
-        <input type="text" name="descricao do cargo" id="input-descricao" maxlength="500" required>
-        <input type="date" name="data de inicio" id="input-dataInicio">
+        <br>
+        <label for="input-cargo">Cargo
+            <input type="text" name="cargo" id="input-cargo" maxlength="40" required>
+        </label>
+        <label for="input-descricao">Descrição do cargo
+            <input type="text" name="descricao do cargo" id="input-descricao" maxlength="500" required>
+        </label>
+        <label for="input-dataInicio">Data de Inicio
+            <input type="date" name="data de inicio" id="input-dataInicio" required>
+        </label>
     </fieldset>
-    <script src="script.js"></script>
+    <div id="botoes">
+        <button id="botao">Submit</button>
+        <button id="limpar">Limpar</button>
+    </div>
+    <footer id="footer"></footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
