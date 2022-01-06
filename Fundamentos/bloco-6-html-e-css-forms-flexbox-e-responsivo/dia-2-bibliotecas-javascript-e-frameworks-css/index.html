@@ -28,16 +28,16 @@
         <select name="estado" id="estado" class="validate" data-validate="required">
             <option disabled selected value> -- escolha uma opção -- </option>
         </select>
-        <div>
-            <input type="radio" name="tipo" id="input-tipo1" required>Casa
-            <input type="radio" name="tipo" id="input-tipo2" required>Apartamento
+        <div class="validate" data-validate="required">
+            <input type="radio" name="tipo" id="input-tipo1">Casa
+            <input type="radio" name="tipo" id="input-tipo2">Apartamento
         </div>
     </form>
     <form action="" method="get" class="form container" id="form2">
-        <textarea name="resumo" id="textarea-resumo" cols="50" rows="10" maxlength="1000" required placeholder="Conte um pouco sobre voce"></textarea>
-        <input type="text" name="cargo" id="input-cargo" maxlength="40" required placeholder='Cargo'>
-        <input type="text" name="descricao do cargo" id="input-descricao" maxlength="500" required placeholder='Descricao do cargo'>
-        <input type="text" name="data de inicio" id="input-dataInicio" placeholder='Data de inicio'>
+        <textarea name="resumo" id="textarea-resumo" cols="50" rows="10" maxlength="1000" class="validate" data-validate="required" placeholder="Conte um pouco sobre voce"></textarea>
+        <input type="text" name="cargo" id="input-cargo" maxlength="40" class="validate" data-validate="required" placeholder='Cargo'>
+        <input type="text" name="descricao do cargo" id="input-descricao" maxlength="500" class="validate" data-validate="required" placeholder='Descricao do cargo'>
+        <input type="text" name="data de inicio" id="input-dataInicio" class="validate" data-validate="required" placeholder='Data de inicio'>
     </form>
     <br>
     <div id="botoes" class="container">

@@ -13,4 +13,4 @@ for (let i = 0; i < arrayEstados.length; i += 1) {
 const inputs = document.getElementsByTagName('input');
 const footer = document.getElementById('footer');
 const botaoLimpar = document.getElementById('limpar');
-validation.init('name')
+validation.init()
