@@ -14,3 +14,4 @@ const inputs = document.getElementsByTagName('input');
 const footer = document.getElementById('footer');
 const botaoLimpar = document.getElementById('limpar');
 validation.init()
+validation.validate('form')
