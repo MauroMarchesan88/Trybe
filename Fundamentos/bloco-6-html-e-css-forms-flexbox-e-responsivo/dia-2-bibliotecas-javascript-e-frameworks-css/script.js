@@ -1,7 +1,32 @@
 // DatePicjerX call
 document.getElementById('input-dataInicio').DatePickerX.init({format:'dd-mm-yyyy'});
 // PopupValidation setup
+validation.init("#form", {
+    events: ["change", "paste", "keyup"]
+});
+// validation.highlight();
+// validation.validate('form')
+validation.rules["name"] = {
+    message: "Maximo 10 letras",
+    method: el => {
+      return el.value === "" || /^-?\d+$/.test(el.value);
+    }    
+}
 
+validation.isValid('name', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencher nome',
+    },
+    {
+      rule: 'maxLength',
+      value: 10,
+    },
+    {
+        rule: 'minLength',
+        value: 3,
+    }
+])
 
 const estados = document.getElementById('estado');
 const arrayEstados = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espirito Santo', 'Goias', 'Maranhao', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Para', 'Paraiba', 'Parana', 'Pernambuco', 'Piaui', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondonia', 'Roraima', 'Santa Catarina', 'Sao Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'];
@@ -13,5 +38,35 @@ for (let i = 0; i < arrayEstados.length; i += 1) {
 const inputs = document.getElementsByTagName('input');
 const footer = document.getElementById('footer');
 const botaoLimpar = document.getElementById('limpar');
-validation.init()
-validation.validate('form')
+const botaoSubmit = document.getElementById('submit-btn');
+
+function contadorDeAcer(event) {
+    let contador = 0;
+    for (let i = 0; i < inputs.length; i += 1) {
+        if (inputs[i].value !== '') {
+            contador += 1;
+            console.log(contador);
+            const divAcertou = document.createElement('div');
+            divAcertou.classList.add('acertou' + i);
+            divAcertou.innerHTML = inputs[i].value
+            footer.appendChild(divAcertou);
+        }
+    }
+    if (contador < 10) {
+        footer.innerHTML = '';
+    }
+}
+function botaoSubmitFunc(event) {
+    event.preventDefault();
+    console.log('test');
+    contadorDeAcer(event);
+}
+function limparTudo() {
+    footer.innerHTML = '';
+    for (let i = 0; i < inputs.length; i += 1) {
+        inputs[i].value = '';
+    }
+}
+
+botaoSubmit.addEventListener('click', botaoSubmitFunc);
+botaoLimpar.addEventListener('click', limparTudo);

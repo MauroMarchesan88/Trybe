@@ -16,7 +16,7 @@
     <h1>Formulário</h1>
     <form action="#" method="get" class="validate container" data-validate="required" id="form" autocomplete="off">
         <label for="input-text" class="form-label">
-            <input type="text" name="name" id="name" autocomplete='off' class="validate" data-validate="required" placeholder="Digite seu nome">
+            <input type="text" name="name" id="name" class="validate" data-validate="required,name" autocomplete='off' placeholder="Digite seu nome">
         </label>
         <label for="input-email" class="form-label">
             <input type="text" name="email" id="email" autocomplete='off' class="validate" data-validate="required,email" placeholder="Digite seu e-mail">
@@ -33,7 +33,7 @@
             <input type="radio" name="tipo" id="input-tipo2">Apartamento
         </div>
     </form>
-    <form action="" method="get" class="form container" id="form2">
+    <form action="" method="get" class="validate container" id="form2">
         <textarea name="resumo" id="textarea-resumo" cols="50" rows="10" maxlength="1000" class="validate" data-validate="required" placeholder="Conte um pouco sobre voce"></textarea>
         <input type="text" name="cargo" id="input-cargo" maxlength="40" class="validate" data-validate="required" placeholder='Cargo'>
         <input type="text" name="descricao do cargo" id="input-descricao" maxlength="500" class="validate" data-validate="required" placeholder='Descricao do cargo'>
