@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.flex-container{
+    padding: 800px;
+    display: flex;
+}
+i {
+    padding: 300px;
+    display: flex-stretch;
+}
