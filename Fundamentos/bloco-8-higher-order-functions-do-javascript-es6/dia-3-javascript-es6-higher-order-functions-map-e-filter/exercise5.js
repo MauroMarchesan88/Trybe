@@ -62,19 +62,12 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  const expectedResult = [
-    'As Crônicas de Gelo e Fogo - Fantasia - George R. R. Martin',
-    'O Senhor dos Anéis - Fantasia - J. R. R. Tolkien',
-    'Fundação - Ficção Científica - Isaac Asimov',
-    'Duna - Ficção Científica - Frank Herbert',
-    'A Coisa - Terror - Stephen King',
-    'O Chamado de Cthulhu - Terror - H. P. Lovecraft',
-  ];
-  
-  function formatedBookNames() {
+  function fantasyOrScienceFictionAuthors(array) {
     // escreva seu código aqui
-    const newList = books.map((book) => `${book.name} ${book.genre} ${book.author.name}`);
-    return newList;
+    const filtro = array.filter((element) => element.genre === 'Fantasia' || element.genre === 'Ficção Científica')
+    const authors = filtro.map((element) => element.author.name);
+    const ordered = authors.sort();
+    console.log(ordered);
+    return ordered;
   }
-
-  console.log(formatedBookNames(books));
+  fantasyOrScienceFictionAuthors(books);
