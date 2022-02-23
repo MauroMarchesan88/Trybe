@@ -1,0 +1,8 @@
+.App {
+  display: block;
+  text-align: center;
+}
+
+.pokemondiv {
+  display: flex;
+}
