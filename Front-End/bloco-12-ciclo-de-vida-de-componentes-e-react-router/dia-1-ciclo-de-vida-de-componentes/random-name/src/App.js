@@ -3,6 +3,7 @@ import './App.css';
 
 class App extends React.Component {
   constructor() {
+    console.log("constructor")
     super();
 
     this.renderUserElement = this.renderUserElement.bind(this);
@@ -16,21 +17,21 @@ class App extends React.Component {
   }
 
   async fetchRandomName() {
+    console.log("fetch")
     this.setState(
       { loading: true },
       async () => {
-      const requestHeaders = { headers: { Accept: 'application/json' } }
-      const requestReturn = await fetch('https://api.randomuser.me/', requestHeaders)
+      const requestReturn = await fetch('https://api.randomuser.me/')
       const requestObject = await requestReturn.json();
       const title = requestObject.results[0].name.title;
       const firstName =requestObject.results[0].name.first;
       const lastName = requestObject.results[0].name.last;
-      const requestPhoto = await fetch(requestObject.results[0].picture.large)
+      const requestPhoto = requestObject.results[0].picture.large;
       this.setState({
         loading: false,
         userName: `${title} ${firstName} ${lastName}`,
         userPhoto: requestPhoto,
-        userAge: requestObject.results[0].registered.age,
+        userAge: requestObject.results[0].dob.age,
         userEMail: requestObject.results[0].email,
       });
     });
@@ -40,14 +41,24 @@ class App extends React.Component {
     this.fetchRandomName();
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(nextProps)
+    console.log(nextState)
+    const maxAge = 50;
+    const age = nextState.userAge;
+    console.log(age);
+    return age < maxAge ? true : false;
+  }
   renderUserElement() {
     return (
       <div>
         <div>
           <p>Name {this.state.userName}</p>
-          Photo <img src={this.userPhoto} alt="aqui vai a foto"/>
-          <p>Age {this.userAge}</p>
-          <p>Email {this.userEMail}</p>
+          <div className='photoDiv'>
+            Photo <img src={this.state.userPhoto} alt="aqui vai a foto"/>
+          </div>
+          <p>Age {this.state.userAge}</p>
+          <p>Email {this.state.userEMail}</p>
         </div>
       </div>
     );
