@@ -1,0 +1,17 @@
+{
+  "name": "io-local",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readFileSync.js",
+  "scripts": {
+    "readFile": "node readFile.js",
+    "readFileSync": "node readFileSync.js",
+    "writeFile": "node writeFile.js",
+    "async": "node async.js",
+    "writeNew": "node writeNewFile.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mauro",
+  "license": "ISC"
+}
