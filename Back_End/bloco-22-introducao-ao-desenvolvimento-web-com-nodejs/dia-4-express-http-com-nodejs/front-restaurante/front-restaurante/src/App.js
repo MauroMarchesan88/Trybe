@@ -21,13 +21,38 @@ class receitasList extends React.Component {
       ));
 
     fetch('http://localhost:3001/drinks')
-    .then(response => response.json())
-    .then((drinks) => this.setState(
-      {
-        drinks,
-        isLoading: false,
+      .then(response => response.json())
+      .then((drinks) => this.setState(
+        {
+          drinks,
+          isLoading: false,
+        },
+      ));
+  }
+
+  addRecipe = () => {
+    fetch(`http://localhost:3001/recipes/`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
-    ));
+      body: JSON.stringify({
+        id: 4,
+        name: 'Macarrão com Frango',
+        price: 30
+      })
+    });
+  }
+
+  deleteRecipe = () => {
+    fetch(`http://localhost:3001/recipes/`, {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }
+    });
   }
 
   render() {
@@ -45,13 +70,13 @@ class receitasList extends React.Component {
                 <span>Tempo de preparo: {recipe.waitTime}</span>
               </div>
             ))}
-              {drinks.map((drink) => (
-                <div key={drink.id}>
-                  <h1>{drink.name}</h1>
-                  <span>Preço: {drinks.price}</span>
-                  <span>Tempo de preparo: {drink.waitTime}</span>
-                </div>
-              ))}
+            {drinks.map((drink) => (
+              <div key={drink.id}>
+                <h1>{drink.name}</h1>
+                <span>Preço: {drinks.price}</span>
+                <span>Tempo de preparo: {drink.waitTime}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
