@@ -1,0 +1,15 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "BMI calculator",
+  "main": "imc.js",
+  "scripts": {
+    "imc": "node imc.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mauro",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

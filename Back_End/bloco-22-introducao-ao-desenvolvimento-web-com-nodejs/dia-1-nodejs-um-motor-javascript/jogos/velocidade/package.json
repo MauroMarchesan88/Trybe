@@ -1,0 +1,16 @@
+{
+  "name": "velocidade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "velocidade.js",
+  "scripts": {
+    "velocidade": "node velocidade.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mauro",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
