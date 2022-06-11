@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const express = require('express');
 const bodyParser = require('body-parser');
+const generateToken = require('./token');
 const app = express();
 app.use(bodyParser.json());
 
@@ -12,6 +13,20 @@ function fetchSimpsons() {
 function updateSimpsons(newChar) {
     return fs.writeFile('./simpsons.json', JSON.stringify(newChar));
 }
+
+app.get('/validateToken', function (req, res) {
+    const token = req.headers.authorization;
+    if (token.length !== 16) return res.status(401).json({ message: 'Invalid Token!' });
+
+    res.status(200).json({ message: 'Valid Token!' })
+});
+
+app.post('/signup', function (req, res) {
+    const { email, password, firstName, phone } = req.body;
+    if (!email || !password || !firstName || !phone) return res.status(401).json({ message: 'missing fields' });
+    const token = generateToken();
+    res.status(200).json({ token: token });
+});
 
 app.get('/simpsons', async (_req, res) => {
     try {
@@ -47,6 +62,11 @@ app.post('/simpsons', async (req, res) => {
         return res.status(500).end();
     }
 });
+
+app.all('*', function (req, res) {
+    return res.status(404).json({ message: `Rota '${req.path}' não existe!` });
+});
+
 
 app.listen(3001, () => {
     console.log('Aplicação ouvindo na porta 3001');
