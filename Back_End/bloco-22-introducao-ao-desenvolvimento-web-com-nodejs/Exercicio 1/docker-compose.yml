@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  node:
+    image: node:16
+    container_name: exercicio1-grupo17
+    tty: true
+    stdin_open: true
+    command: bash
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3001
