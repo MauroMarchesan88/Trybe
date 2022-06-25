@@ -3,6 +3,7 @@ const Joi = require('joi');
 
 const getAll = async (_req, res) => {
     const authors = await Author.getAll();
+    console.log(authors)
 
     res.status(200).json(authors);
 };
@@ -25,6 +26,7 @@ const createAuthor = async (req, res, next) => {
         first_name: firstName,
         middle_name: middleName,
         last_name: lastName,
+        contacts,
     } = req.body;
 
     // Utilizamos o Joi para descrever o objeto que esperamos
@@ -33,7 +35,8 @@ const createAuthor = async (req, res, next) => {
     const { error } = Joi.object({
         firstName: Joi.string().not().empty().required(),
         lastName: Joi.string().not().empty().required(),
-    }).validate({ firstName, lastName }); // Por fim, pedimos que o Joi verifique se o corpo da requisição se adequa a essas regras
+        contacts: Joi.array().items(Joi.string().length(15).required()).min(1).required(),
+    }).validate({ firstName, lastName, contacts }); // Por fim, pedimos que o Joi verifique se o corpo da requisição se adequa a essas regras
 
     // Caso exista algum problema com a validação, iniciamos o fluxo de erro e interrompemos o middleware.
     if (error) {
@@ -41,7 +44,7 @@ const createAuthor = async (req, res, next) => {
     }
 
     // Caso não haja erro de validação, prosseguimos com a criação da pessoa autora
-    const newAuthor = await Author.createAuthor(firstName, middleName, lastName);
+    const newAuthor = await Author.createAuthor(firstName, middleName, lastName, contacts);
 
     // Caso haja erro na criação da pessoa autora, iniciamos o fluxo de erro
     if (newAuthor.error) return next(newAuthor.error);

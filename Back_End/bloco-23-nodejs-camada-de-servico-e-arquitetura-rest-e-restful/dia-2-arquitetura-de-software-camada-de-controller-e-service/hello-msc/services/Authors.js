@@ -1,4 +1,5 @@
 const Author = require('../models/Author');
+const Contact = require('../models/Contact');
 
 const getAll = async () => Author.getAll();
 
@@ -17,7 +18,7 @@ const findById = async (id) => {
     return author;
 };
 
-const createAuthor = async (firstName, middleName, lastName) => {
+const createAuthor = async (firstName, middleName, lastName, contacts) => {
     const existingAuthor = await Author.findByName(firstName, middleName, lastName);
 
     if (existingAuthor) {
@@ -29,8 +30,11 @@ const createAuthor = async (firstName, middleName, lastName) => {
         };
     }
 
-    // Caso a pessoa autora não exista e, portanto, possa ser criado
-    return Author.createAuthor(firstName, middleName, lastName);
+    const { id } = await Author.createAuthor(firstName, middleName, lastName);
+
+    await Promise.all(contacts.map((contact) => Contact.createContact(id, contact)));
+
+    return ({ id, firstName, middleName, lastName, contacts });
 };
 
 module.exports = {
