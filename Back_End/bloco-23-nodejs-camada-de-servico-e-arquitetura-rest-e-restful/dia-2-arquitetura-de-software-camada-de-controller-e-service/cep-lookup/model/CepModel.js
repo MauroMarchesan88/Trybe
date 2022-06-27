@@ -6,7 +6,6 @@ const CEP_REGEX = /\d{5}-\d{3}/;
 
 // Função que formata um CEP
 const formatCep = (cep) => {
-    console.log(cep, 'format');
     // Caso o CEP já esteja formatado, retorna o próprio CEP
     if (CEP_REGEX.test(cep)) return cep;
 
@@ -28,20 +27,22 @@ const findAddressByCep = async (cepToSearch) => {
     // puro no banco
     const treatedCep = cepToSearch.replace('-', '');
 
-    const query = 'SELECT cep, logradouro, bairro, localidade, uf FROM ceps WHERE cep = ?';
+    const querySelect = 'SELECT cep, logradouro, bairro, localidade, uf FROM ceps WHERE cep = ?';
 
     // Executamos a query, selecionando o primeiro resultado, caso exista
     // e assumindo `null`, caso contrário
-    const result = await connection.execute(query, [treatedCep])
+    let result = await connection.execute(querySelect, [treatedCep])
         .then(([results]) => (results.length ? results[0] : null));
 
     // Caso nenhum resultado seja encontrado, retornamos `null`
     if (!result) {
-        await fetch(`https://viacep.com.br/ws/${treatedCep}/json/`)
-            .then((res) => res.json())
-            .then((json) => console.log(json));
+        result = await fetch(`https://viacep.com.br/ws/${treatedCep}/json/`)
+            .then((res) => res.json());
+        // .then((json) => console.log(json));
     }
-
+    if (!result) {
+        return null;
+    }
     // Retornamos os dados do CEP formatados pela função getNewCep
     return getNewCep(result);
 };
