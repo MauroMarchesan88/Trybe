@@ -8,19 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      email: {
-        type: Sequelize.STRING
-      },
       fullName: {
+        type: Sequelize.STRING,
+        field: 'full_name',
+      },
+      email: {
         type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        field: 'created_at',
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        field: 'updated_at',
       }
     });
   },
