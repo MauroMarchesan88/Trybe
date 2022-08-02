@@ -1,17 +1,30 @@
-var TV = /** @class */ (function () {
-    function TV(brand, size, resolution, connections) {
-        console.log("Creating TV ".concat(brand));
-        this.brand = brand;
-        this.size = size;
-        this.resolution = resolution;
-        this.connections = connections;
+"use strict";
+class TV {
+    constructor(brand, size, resolution, connections) {
+        console.log(`Creating TV ${brand}`);
+        this._brand = brand;
+        this._size = size;
+        this._resolution = resolution;
+        this._connections = connections;
     }
-    TV.prototype.turnOn = function () {
-        console.log("".concat(this.brand, ":\n        ").concat(this.size, ", ").concat(this.resolution, ", ").concat(this.connections));
-    };
-    return TV;
-}());
-var t1 = new TV('LG', 40, '1080p', ['HDMI']);
-var t2 = new TV('Sony', 55, '4K', ['HDMI', 'wifi']);
-t1.turnOn();
-t2.turnOn();
+    // turnOn() {
+    //     console.log(`${this.brand}:
+    //     ${this.size}, ${ this.resolution}, ${this.connections}`);
+    // }
+    get connectedTo() {
+        return this._connectedTo;
+    }
+    set connectedTo(newValue) {
+        if (!newValue || this._connections.includes(newValue)) {
+            this._connectedTo = newValue;
+            console.log(this._connectedTo, `passou ${newValue}`);
+        }
+        console.log("Sorry, connection unavailable!", `passou ${newValue}`);
+    }
+}
+const t1 = new TV('LG', 40, '1080p', ['HDMI']);
+const t2 = new TV('Sony', 55, '4K', ['HDMI', 'wifi']);
+// t1.turnOn();
+// t2.turnOn();
+t1.connectedTo = 'HDMI';
+t2.connectedTo = 'Ethernet';
